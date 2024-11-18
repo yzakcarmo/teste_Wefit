@@ -1,5 +1,5 @@
 import {Request, Response} from "express";
-import {createUser, findUser, getAllUsers, updateUser} from "../models/user.model";
+import {createUser, findUser, getAllUsers, updateUser, removeUser} from "../models/user.model";
 
 export const createUserHandler = async (req: Request, res: Response) => {
     try {
