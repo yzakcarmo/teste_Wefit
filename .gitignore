@@ -1,0 +1,38 @@
+# Diretórios e arquivos do Node.js
+node_modules/
+package-lock.json
+yarn.lock
+
+# Arquivos gerados pelo TypeScript
+dist/
+build/
+*.js
+*.js.map
+*.d.ts
+
+# Configurações do ambiente local
+.vscode/
+.idea/
+*.log
+
+# Sistemas operacionais
+.DS_Store          # macOS
+Thumbs.db          # Windows
+
+# Diretórios de testes e relatórios
+coverage/
+*.test.ts
+*.spec.ts
+
+# Arquivos temporários ou de backup
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.orig
+
+# Outros
+npm-debug.log*
+yarn-error.log
+*.lock
