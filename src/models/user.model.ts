@@ -1,9 +1,5 @@
-import pool from "../config/database";
-
-interface User {
-    id?: number;
-    cnpj: string;
-    cpf_responsavel: string;
+export abstract class User {
+    id: number;
     nome: string;
     celular: string;
     telefone: string;
@@ -15,91 +11,19 @@ interface User {
     cidade: string;
     bairro: string;
     estado: string;
-}
 
-export const createUser = async (user: User): Promise<void> => {
-    const query = `
-    INSERT INTO users 
-    (cnpj, cpf_responsavel, nome, celular, telefone, email, cep, logradouro, numero, complemento, cidade, bairro, estado) 
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
-  `;
-
-    const values = [
-        user.cnpj,
-        user.cpf_responsavel,
-        user.nome,
-        user.celular,
-        user.telefone,
-        user.email,
-        user.cep,
-        user.logradouro,
-        user.numero,
-        user.complemento,
-        user.cidade,
-        user.bairro,
-        user.estado,
-    ];
-
-    const connection = await pool.getConnection();
-    await connection.execute(query, values);
-    connection.release();
-};
-
-export const getAllUsers = async (): Promise<User[]> => {
-    const query = `SELECT * FROM users`;
-
-    const connection = await pool.getConnection();
-    const [rows] = await connection.execute(query);
-    connection.release();
-
-    return rows as User[];
-};
-
-export const updateUser = async (id: number, user: Partial<User>): Promise<void> => {
-    const query = `
-    UPDATE users
-    SET cnpj = ?, cpf_responsavel = ?, nome = ?, celular = ?, telefone = ?, email = ?, 
-        cep = ?, logradouro = ?, numero = ?, complemento = ?, cidade = ?, bairro = ?, estado = ?
-    WHERE id = ?
-  `;
-
-    const values = [
-        user.cnpj,
-        user.cpf_responsavel,
-        user.nome,
-        user.celular,
-        user.telefone,
-        user.email,
-        user.cep,
-        user.logradouro,
-        user.numero,
-        user.complemento,
-        user.cidade,
-        user.bairro,
-        user.estado,
-        id,
-    ];
-
-    const connection = await pool.getConnection();
-    await connection.execute(query, values);
-    connection.release();
-};
-
-export const findUser = async (id: number): Promise<User | null> => {
-    const query = `SELECT * FROM users where id = ?`;
-
-    const connection = await pool.getConnection();
-    const [rows] = await connection.execute(query, [id]);
-    connection.release();
-
-    const [user] = rows as User[];
-    return user || null;
-}
-
-export const removeUser = async (id: number): Promise<void> => {
-    const query = `DELETE FROM users WHERE id = ?`;
-
-    const connection = await pool.getConnection();
-    await connection.execute(query, [id]);
-    connection.release();
+    constructor(user: Partial<User>) {
+        this.id = user.id!;
+        this.nome = user.nome!;
+        this.celular = user.celular!;
+        this.telefone = user.telefone!;
+        this.email = user.email!;
+        this.cep = user.cep!;
+        this.logradouro = user.logradouro!;
+        this.numero = user.numero!;
+        this.complemento = user.complemento!;
+        this.cidade = user.cidade!;
+        this.bairro = user.bairro!;
+        this.estado = user.estado!;
+    }
 }
