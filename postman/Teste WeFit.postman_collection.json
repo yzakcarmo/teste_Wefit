@@ -1,111 +1,111 @@
 {
-	"info": {
-		"_postman_id": "96f77a84-ae13-4d79-88c4-5d5627fa92e6",
-		"name": "Teste WeFit",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "15352651"
-	},
-	"item": [
-		{
-			"name": "ping",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": "{{host}}ping"
-			},
-			"response": []
-		},
-		{
-			"name": "create",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"cnpj\": \"12.345.678/0001-99\",\n  \"cpf_responsavel\": \"123.456.789-10\",\n  \"nome\": \"Empresa Exemplo LTDA\",\n  \"celular\": \"(11) 91234-5678\",\n  \"telefone\": \"(11) 3234-5678\",\n  \"email\": \"exemplo@empresa.com\",\n  \"confirmar_email\": \"exemplo@empresa.com\",\n  \"cep\": \"01234-567\",\n  \"logradouro\": \"Rua Exemplo\",\n  \"numero\": \"123\",\n  \"complemento\": \"Sala 45\",\n  \"cidade\": \"São Paulo\",\n  \"bairro\": \"Centro\",\n  \"estado\": \"SP\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "{{host}}users"
-			},
-			"response": []
-		},
-		{
-			"name": "getAll",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": "{{host}}users"
-			},
-			"response": []
-		},
-		{
-			"name": "findbyId",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": "{{host}}users/1"
-			},
-			"response": []
-		},
-		{
-			"name": "update",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"cnpj\": \"12.345.678/0001-99\",\n  \"cpf_responsavel\": \"123.456.789-10\",\n  \"nome\": \"Empresa Exemplo LTDA b\",\n  \"celular\": \"(11) 91234-5678\",\n  \"telefone\": \"(11) 3234-5678\",\n  \"email\": \"exemplo@empresa.com\",\n  \"confirmar_email\": \"exemplo@empresa.com\",\n  \"cep\": \"01234-567\",\n  \"logradouro\": \"Rua Exemplo\",\n  \"numero\": \"123\",\n  \"complemento\": \"Sala 45\",\n  \"cidade\": \"São Paulo\",\n  \"bairro\": \"Centro\",\n  \"estado\": \"SP\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "{{host}}users/1"
-			},
-			"response": []
-		},
-		{
-			"name": "remove",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": "{{host}}users/1"
-			},
-			"response": []
-		}
-	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"packages": {},
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"packages": {},
-				"exec": [
-					""
-				]
-			}
-		}
-	],
-	"variable": [
-		{
-			"key": "host",
-			"value": "",
-			"type": "string"
-		}
-	]
+  "info": {
+    "_postman_id": "96f77a84-ae13-4d79-88c4-5d5627fa92e6",
+    "name": "Teste WeFit",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+    "_exporter_id": "15352651"
+  },
+  "item": [
+    {
+      "name": "ping",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{host}}ping"
+      },
+      "response": []
+    },
+    {
+      "name": "create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cnpj\": \"12.345.678/0001-99\",\n  \"cpf_responsavel\": \"123.456.789-10\",\n  \"nome\": \"Empresa Exemplo LTDA\",\n  \"celular\": \"(11) 91234-5678\",\n  \"telefone\": \"(11) 3234-5678\",\n  \"email\": \"exemplo@empresa.com\",\n  \"confirmar_email\": \"exemplo@empresa.com\",\n  \"cep\": \"01234-567\",\n  \"logradouro\": \"Rua Exemplo\",\n  \"numero\": \"123\",\n  \"complemento\": \"Sala 45\",\n  \"cidade\": \"São Paulo\",\n  \"bairro\": \"Centro\",\n  \"estado\": \"SP\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{host}}users"
+      },
+      "response": []
+    },
+    {
+      "name": "getAll",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{host}}users"
+      },
+      "response": []
+    },
+    {
+      "name": "findbyId",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{host}}users/1"
+      },
+      "response": []
+    },
+    {
+      "name": "update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cnpj\": \"12.345.678/0001-99\",\n  \"cpf_responsavel\": \"123.456.789-10\",\n  \"nome\": \"Empresa Exemplo LTDA b\",\n  \"celular\": \"(11) 91234-5678\",\n  \"telefone\": \"(11) 3234-5678\",\n  \"email\": \"exemplo@empresa.com\",\n  \"confirmar_email\": \"exemplo@empresa.com\",\n  \"cep\": \"01234-567\",\n  \"logradouro\": \"Rua Exemplo\",\n  \"numero\": \"123\",\n  \"complemento\": \"Sala 45\",\n  \"cidade\": \"São Paulo\",\n  \"bairro\": \"Centro\",\n  \"estado\": \"SP\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{host}}users/1"
+      },
+      "response": []
+    },
+    {
+      "name": "remove",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{host}}users/1"
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "host",
+      "value": "",
+      "type": "string"
+    }
+  ]
 }

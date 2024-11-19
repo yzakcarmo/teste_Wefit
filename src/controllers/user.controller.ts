@@ -1,5 +1,5 @@
 import {Request, Response} from "express";
-import {createUser, findUser, getAllUsers, updateUser, removeUser} from "../models/user.model";
+import {createUser, findUser, getAllUsers, removeUser, updateUser} from "../models/user.model";
 
 export const createUserHandler = async (req: Request, res: Response) => {
     try {
@@ -40,7 +40,7 @@ export const updateUserHandler = async (req: Request, res: Response) => {
     const userData = req.body;
 
     try {
-        const user =  await findUser(Number(id));
+        const user = await findUser(Number(id));
         if (!user) {
             return res.status(404).json({message: "Usuário não localizado"})
         }
@@ -55,14 +55,14 @@ export const updateUserHandler = async (req: Request, res: Response) => {
 export const removeUserHandler = async (req: Request, res: Response) => {
     const {id} = req.params;
 
-    try{
+    try {
         const user = await findUser(Number(id));
         if (!user) {
             return res.status(404).json({message: "Usuário não localizado"})
         }
 
         await removeUser(Number(id));
-        res.status(204).json({message:"Usuário removido com sucesso!"});
+        res.status(204).json({message: "Usuário removido com sucesso!"});
     } catch (error) {
         res.status(500).json({error: "Erro ao atualizar o usuário"});
     }

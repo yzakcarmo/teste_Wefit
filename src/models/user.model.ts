@@ -99,7 +99,7 @@ export const findUser = async (id: number): Promise<User | null> => {
 export const removeUser = async (id: number): Promise<void> => {
     const query = `DELETE FROM users WHERE id = ?`;
 
-    const connection  =  await pool.getConnection();
+    const connection = await pool.getConnection();
     await connection.execute(query, [id]);
     connection.release();
 }
